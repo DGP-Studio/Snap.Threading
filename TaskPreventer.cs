@@ -22,7 +22,10 @@ namespace Snap.Threading
         /// <summary>
         /// 当前任务是否可以继续执行
         /// </summary>
-        public bool ShouldExecute => Interlocked.Exchange(ref shouldExecute, 0) == 1;
+        public bool ShouldExecute
+        {
+            get => Interlocked.Exchange(ref shouldExecute, 0) == 1;
+        }
 
         /// <summary>
         /// 重置状态，使任务可以再次执行
