@@ -9,7 +9,7 @@ namespace Snap.Threading
     public static class ParalelForEachExtensions
     {
         //配置节流器
-        private static readonly SemaphoreSlim throttler = new(Environment.ProcessorCount * 4, Environment.ProcessorCount * 4);
+        private static readonly SemaphoreSlim throttler = new(Environment.ProcessorCount * 2, Environment.ProcessorCount * 2);
         public static async Task ParallelForEachAsync<T>(this IEnumerable<T> source, Func<T, Task> asyncAction)
         {
             IEnumerable<Task> tasks = source.Select(async item =>
