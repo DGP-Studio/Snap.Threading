@@ -49,7 +49,9 @@ namespace Snap.Threading
             public void Dispose()
             {
                 if (isDisposed)
+                {
                     return;
+                }
 
                 semaphore.Release();
                 isDisposed = true;
