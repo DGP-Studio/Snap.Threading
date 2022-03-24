@@ -52,8 +52,8 @@ namespace Snap.Threading
                 {
                     return;
                 }
-
                 semaphore.Release();
+
                 isDisposed = true;
             }
         }
