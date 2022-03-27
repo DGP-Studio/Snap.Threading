@@ -24,7 +24,7 @@ namespace Snap.Threading
         /// </summary>
         public bool ShouldExecute
         {
-            get => Interlocked.Exchange(ref shouldExecute, 0) == 1;
+            get => Interlocked.Exchange(ref this.shouldExecute, 0) == 1;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Snap.Threading
         /// </summary>
         public void Release()
         {
-            Interlocked.Exchange(ref shouldExecute, 1);
+            Interlocked.Exchange(ref this.shouldExecute, 1);
         }
     }
 }

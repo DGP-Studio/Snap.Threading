@@ -48,13 +48,13 @@ namespace Snap.Threading
 
             public void Dispose()
             {
-                if (isDisposed)
+                if (this.isDisposed)
                 {
                     return;
                 }
-                semaphore.Release();
+                this.semaphore.Release();
 
-                isDisposed = true;
+                this.isDisposed = true;
             }
         }
     }
