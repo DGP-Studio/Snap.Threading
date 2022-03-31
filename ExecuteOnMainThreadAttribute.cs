@@ -8,7 +8,5 @@ namespace Snap.Threading
     [AttributeUsage(AttributeTargets.Method)]
     public class ExecuteOnMainThreadAttribute : Attribute
     {
-
     }
-
 }
